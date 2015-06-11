@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A93DB31-E246-43A5-AB7F-EC9D94CDE449}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DungeonDrive</RootNamespace>
+    <AssemblyName>DungeonDrive</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.GamerServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Input.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllLevelInfo.cs" />
+    <Compile Include="CDriveSubDirs.cs" />
+    <Compile Include="GameOverState.cs" />
+    <Compile Include="GameState.cs" />
+    <Compile Include="InventoryState.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="LevelInfo.cs" />
+    <Compile Include="MessageState.cs" />
+    <Compile Include="OptionsState.cs" />
+    <Compile Include="PauseState.cs" />
+    <Compile Include="Projectile.cs" />
+    <Compile Include="Enemies.cs" />
+    <Compile Include="Hero.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obstacles.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Room.cs" />
+    <Compile Include="SkillStreeState.cs" />
+    <Compile Include="Spell.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="TitleState.cs" />
+    <Compile Include="Unit.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\skeletalMage2.png" />
+    <None Include="Resources\skeletalMage1.png" />
+    <None Include="Resources\skeletalMage0.png" />
+    <None Include="Resources\rock.png" />
+    <None Include="Resources\grass.jpg" />
+    <None Include="Resources\ladderUp2.png" />
+    <None Include="Resources\ladderUp.png" />
+    <None Include="Resources\ladderDown2.png" />
+    <None Include="Resources\ladderDown.png" />
+    <None Include="Resources\notGF2.png" />
+    <None Include="Resources\notGF1.png" />
+    <None Include="Resources\notGF3.png" />
+    <None Include="Resources\notSS2.png" />
+    <None Include="Resources\notSS1.png" />
+    <None Include="Resources\notSS3.png" />
+    <None Include="Resources\GF2.png" />
+    <None Include="Resources\GF1.png" />
+    <None Include="Resources\GF3.png" />
+    <None Include="Resources\SS2.png" />
+    <None Include="Resources\SS1.png" />
+    <None Include="Resources\SS3.png" />
+    <None Include="Resources\shadowStep6.png" />
+    <None Include="Resources\shadowStep5.png" />
+    <None Include="Resources\shadowStep4.png" />
+    <None Include="Resources\shadowStep3.png" />
+    <None Include="Resources\shadowStep2.png" />
+    <None Include="Resources\shadowStep1.png" />
+    <None Include="Resources\shadowStep19.png" />
+    <None Include="Resources\shadowStep18.png" />
+    <None Include="Resources\shadowStep17.png" />
+    <None Include="Resources\shadowStep16.png" />
+    <None Include="Resources\shadowStep15.png" />
+    <None Include="Resources\shadowStep14.png" />
+    <None Include="Resources\shadowStep13.png" />
+    <None Include="Resources\shadowStep12.png" />
+    <None Include="Resources\shadowStep11.png" />
+    <None Include="Resources\shadowStep10.png" />
+    <None Include="Resources\shadowStep9.png" />
+    <None Include="Resources\shadowStep8.png" />
+    <None Include="Resources\shadowStep7.png" />
+    <None Include="Resources\pulling19.png" />
+    <None Include="Resources\pulling18.png" />
+    <None Include="Resources\pulling17.png" />
+    <None Include="Resources\pulling16.png" />
+    <None Include="Resources\pulling15.png" />
+    <None Include="Resources\pulling14.png" />
+    <None Include="Resources\pulling13.png" />
+    <None Include="Resources\pulling12.png" />
+    <None Include="Resources\pulling11.png" />
+    <None Include="Resources\pulling10.png" />
+    <None Include="Resources\pulling9.png" />
+    <None Include="Resources\pulling8.png" />
+    <None Include="Resources\pulling7.png" />
+    <None Include="Resources\pulling6.png" />
+    <None Include="Resources\pulling5.png" />
+    <None Include="Resources\pulling4.png" />
+    <None Include="Resources\pulling3.png" />
+    <None Include="Resources\pulling2.png" />
+    <None Include="Resources\pulling1.png" />
+    <None Include="Resources\pulling20.png" />
+    <None Include="Resources\notPB2.png" />
+    <None Include="Resources\notPB1.png" />
+    <None Include="Resources\notPB3.png" />
+    <None Include="Resources\notCF2.png" />
+    <None Include="Resources\notCF1.png" />
+    <None Include="Resources\notCF3.png" />
+    <None Include="Resources\notEB2.png" />
+    <None Include="Resources\notEB1.png" />
+    <None Include="Resources\notEB3.png" />
+    <None Include="Resources\notRuneOfFire2.png" />
+    <None Include="Resources\notRuneOfFire1.png" />
+    <None Include="Resources\notRuneOfFire3.png" />
+    <None Include="Resources\notLighteningBall2.png" />
+    <None Include="Resources\notLighteningBall1.png" />
+    <None Include="Resources\notLighteningBall3.png" />
+    <None Include="Resources\spell_bluetop_1_1.png" />
+    <None Include="Resources\spell_bluetop_1_2.png" />
+    <None Include="Resources\pyroblast2.png" />
+    <None Include="Resources\pyroblast1.png" />
+    <None Include="Resources\pyroblast3.png" />
+    <None Include="Resources\fireball_1_64_63.png" />
+    <None Include="Resources\fireball_1_64_62.png" />
+    <None Include="Resources\fireball_1_64_61.png" />
+    <None Include="Resources\fireball_1_64_60.png" />
+    <None Include="Resources\fireball_1_64_59.png" />
+    <None Include="Resources\fireball_1_64_58.png" />
+    <None Include="Resources\fireball_1_64_57.png" />
+    <None Include="Resources\fireball_1_64_56.png" />
+    <None Include="Resources\fireball_1_64_55.png" />
+    <None Include="Resources\fireball_1_64_54.png" />
+    <None Include="Resources\fireball_1_64_53.png" />
+    <None Include="Resources\fireball_1_64_52.png" />
+    <None Include="Resources\fireball_1_64_51.png" />
+    <None Include="Resources\fireball_1_64_50.png" />
+    <None Include="Resources\fireball_1_64_49.png" />
+    <None Include="Resources\fireball_1_64_48.png" />
+    <None Include="Resources\fireball_1_64_47.png" />
+    <None Include="Resources\fireball_1_64_46.png" />
+    <None Include="Resources\fireball_1_64_45.png" />
+    <None Include="Resources\fireball_1_64_44.png" />
+    <None Include="Resources\fireball_1_64_43.png" />
+    <None Include="Resources\fireball_1_64_42.png" />
+    <None Include="Resources\fireball_1_64_41.png" />
+    <None Include="Resources\fireball_1_64_40.png" />
+    <None Include="Resources\fireball_1_64_39.png" />
+    <None Include="Resources\fireball_1_64_38.png" />
+    <None Include="Resources\fireball_1_64_37.png" />
+    <None Include="Resources\fireball_1_64_36.png" />
+    <None Include="Resources\fireball_1_64_35.png" />
+    <None Include="Resources\fireball_1_64_34.png" />
+    <None Include="Resources\fireball_1_64_33.png" />
+    <None Include="Resources\fireball_1_64_32.png" />
+    <None Include="Resources\fireball_1_64_31.png" />
+    <None Include="Resources\fireball_1_64_30.png" />
+    <None Include="Resources\fireball_1_64_29.png" />
+    <None Include="Resources\fireball_1_64_28.png" />
+    <None Include="Resources\fireball_1_64_27.png" />
+    <None Include="Resources\fireball_1_64_26.png" />
+    <None Include="Resources\fireball_1_64_25.png" />
+    <None Include="Resources\fireball_1_64_24.png" />
+    <None Include="Resources\fireball_1_64_23.png" />
+    <None Include="Resources\fireball_1_64_22.png" />
+    <None Include="Resources\fireball_1_64_21.png" />
+    <None Include="Resources\fireball_1_64_20.png" />
+    <None Include="Resources\fireball_1_64_19.png" />
+    <None Include="Resources\fireball_1_64_18.png" />
+    <None Include="Resources\fireball_1_64_17.png" />
+    <None Include="Resources\fireball_1_64_16.png" />
+    <None Include="Resources\fireball_1_64_15.png" />
+    <None Include="Resources\fireball_1_64_14.png" />
+    <None Include="Resources\fireball_1_64_13.png" />
+    <None Include="Resources\fireball_1_64_12.png" />
+    <None Include="Resources\fireball_1_64_11.png" />
+    <None Include="Resources\fireball_1_64_10.png" />
+    <None Include="Resources\fireball_1_64_9.png" />
+    <None Include="Resources\fireball_1_64_8.png" />
+    <None Include="Resources\fireball_1_64_7.png" />
+    <None Include="Resources\fireball_1_64_6.png" />
+    <None Include="Resources\fireball_1_64_5.png" />
+    <None Include="Resources\fireball_1_64_4.png" />
+    <None Include="Resources\fireball_1_64_3.png" />
+    <None Include="Resources\fireball_1_64_2.png" />
+    <None Include="Resources\fireball_1_64_1.png" />
+    <None Include="Resources\fireball_1_64_64.png" />
+    <None Include="Resources\headbind.png" />
+    <None Include="Resources\paralyze.png" />
+    <None Include="Resources\poisoned.png" />
+    <None Include="Resources\rune_2.png" />
+    <None Include="Resources\rune_1.png" />
+    <None Include="Resources\rune_3.png" />
+    <None Include="Resources\RUNEOFFIRE10.png" />
+    <None Include="Resources\RUNEOFFIRE9.png" />
+    <None Include="Resources\RUNEOFFIRE8.png" />
+    <None Include="Resources\RUNEOFFIRE7.png" />
+    <None Include="Resources\RUNEOFFIRE6.png" />
+    <None Include="Resources\RUNEOFFIRE5.png" />
+    <None Include="Resources\RUNEOFFIRE4.png" />
+    <None Include="Resources\RUNEOFFIRE3.png" />
+    <None Include="Resources\RUNEOFFIRE2.png" />
+    <None Include="Resources\RUNEOFFIRE1.png" />
+    <None Include="Resources\RUNEOFFIRE11.png" />
+    <None Include="Resources\YHVH.gif" />
+    <None Include="Resources\LighteningBall2.png" />
+    <None Include="Resources\LighteningBall1.png" />
+    <None Include="Resources\LighteningBall3.png" />
+    <None Include="Resources\frame-9-red.png" />
+    <None Include="Resources\frame-9-jade.png" />
+    <None Include="Resources\frame-9-grey.png" />
+    <None Include="Resources\frame-8-grey.png" />
+    <None Include="Resources\frame-8-eerie.png" />
+    <None Include="Resources\frame-7-grey.png" />
+    <None Include="Resources\frame-7-eerie.png" />
+    <None Include="Resources\frame-6-sky.png" />
+    <None Include="Resources\frame-6-royal.png" />
+    <None Include="Resources\frame-6-grey.png" />
+    <None Include="Resources\frame-5-orange.png" />
+    <None Include="Resources\frame-5-magenta.png" />
+    <None Include="Resources\frame-5-grey.png" />
+    <None Include="Resources\frame-4-sky.png" />
+    <None Include="Resources\frame-4-royal.png" />
+    <None Include="Resources\frame-4-grey.png" />
+    <None Include="Resources\frame-3-red.png" />
+    <None Include="Resources\frame-3-jade.png" />
+    <None Include="Resources\frame-3-grey.png" />
+    <None Include="Resources\frame-2-orange.png" />
+    <None Include="Resources\frame-2-magenta.png" />
+    <None Include="Resources\frame-2-grey.png" />
+    <None Include="Resources\frame-1-grey.png" />
+    <None Include="Resources\frame-0-sky.png" />
+    <None Include="Resources\frame-0-royal.png" />
+    <None Include="Resources\frame-0-red.png" />
+    <None Include="Resources\frame-0-orange.png" />
+    <None Include="Resources\frame-0-magenta.png" />
+    <None Include="Resources\frame-0-jade.png" />
+    <None Include="Resources\frame-0-grey.png" />
+    <None Include="Resources\frame-0-eerie.png" />
+    <None Include="Resources\frame-1-blue.png" />
+    <None Include="Resources\frame-1-acid.png" />
+    <None Include="Resources\frame-0-blue.png" />
+    <None Include="Resources\frame-0-acid.png" />
+    <None Include="Resources\frame-8-acid.png" />
+    <None Include="Resources\frame-7-blue.png" />
+    <None Include="Resources\lighteningball_1_20_20.png" />
+    <None Include="Resources\lighteningball_1_20_19.png" />
+    <None Include="Resources\lighteningball_1_20_18.png" />
+    <None Include="Resources\lighteningball_1_20_17.png" />
+    <None Include="Resources\lighteningball_1_20_16.png" />
+    <None Include="Resources\lighteningball_1_20_15.png" />
+    <None Include="Resources\lighteningball_1_20_14.png" />
+    <None Include="Resources\lighteningball_1_20_13.png" />
+    <None Include="Resources\lighteningball_1_20_12.png" />
+    <None Include="Resources\lighteningball_1_20_11.png" />
+    <None Include="Resources\lighteningball_1_20_10.png" />
+    <None Include="Resources\lighteningball_1_20_9.png" />
+    <None Include="Resources\lighteningball_1_20_8.png" />
+    <None Include="Resources\lighteningball_1_20_7.png" />
+    <None Include="Resources\lighteningball_1_20_6.png" />
+    <None Include="Resources\lighteningball_1_20_5.png" />
+    <None Include="Resources\lighteningball_1_20_4.png" />
+    <None Include="Resources\lighteningball_1_20_3.png" />
+    <None Include="Resources\lighteningball_1_20_2.png" />
+    <None Include="Resources\lighteningball_1_20_1.png" />
+    <None Include="Resources\shield_16.gif" />
+    <None Include="Resources\shield_15.gif" />
+    <None Include="Resources\shield_14.gif" />
+    <None Include="Resources\shield_13.gif" />
+    <None Include="Resources\shield_12.gif" />
+    <None Include="Resources\shield_11.gif" />
+    <None Include="Resources\shield_10.gif" />
+    <None Include="Resources\shield_9.gif" />
+    <None Include="Resources\shield_8.gif" />
+    <None Include="Resources\shield_7.gif" />
+    <None Include="Resources\shield_6.gif" />
+    <None Include="Resources\shield_5.gif" />
+    <None Include="Resources\shield_4.gif" />
+    <None Include="Resources\shield_3.gif" />
+    <None Include="Resources\shield_2.gif" />
+    <None Include="Resources\shield_1.gif" />
+    <None Include="Resources\sword_16.gif" />
+    <None Include="Resources\sword_15.gif" />
+    <None Include="Resources\sword_14.gif" />
+    <None Include="Resources\sword_13.gif" />
+    <None Include="Resources\sword_12.gif" />
+    <None Include="Resources\sword_11.gif" />
+    <None Include="Resources\sword_10.gif" />
+    <None Include="Resources\sword_9.gif" />
+    <None Include="Resources\sword_8.gif" />
+    <None Include="Resources\sword_7.gif" />
+    <None Include="Resources\sword_6.gif" />
+    <None Include="Resources\sword_5.gif" />
+    <None Include="Resources\sword_4.gif" />
+    <None Include="Resources\sword_3.gif" />
+    <None Include="Resources\sword_2.gif" />
+    <None Include="Resources\sword_1.gif" />
+    <None Include="Resources\wand_16.gif" />
+    <None Include="Resources\wand_15.gif" />
+    <None Include="Resources\wand_14.gif" />
+    <None Include="Resources\wand_13.gif" />
+    <None Include="Resources\wand_12.gif" />
+    <None Include="Resources\wand_11.gif" />
+    <None Include="Resources\wand_10.gif" />
+    <None Include="Resources\wand_9.gif" />
+    <None Include="Resources\wand_8.gif" />
+    <None Include="Resources\wand_7.gif" />
+    <None Include="Resources\wand_6.gif" />
+    <None Include="Resources\wand_5.gif" />
+    <None Include="Resources\wand_4.gif" />
+    <None Include="Resources\wand_3.gif" />
+    <None Include="Resources\wand_2.gif" />
+    <None Include="Resources\wand_1.gif" />
+    <None Include="Resources\legs_16.gif" />
+    <None Include="Resources\legs_15.gif" />
+    <None Include="Resources\legs_14.gif" />
+    <None Include="Resources\legs_13.gif" />
+    <None Include="Resources\legs_12.gif" />
+    <None Include="Resources\legs_11.gif" />
+    <None Include="Resources\legs_10.gif" />
+    <None Include="Resources\legs_9.gif" />
+    <None Include="Resources\legs_8.gif" />
+    <None Include="Resources\legs_7.gif" />
+    <None Include="Resources\legs_6.gif" />
+    <None Include="Resources\legs_5.gif" />
+    <None Include="Resources\legs_4.gif" />
+    <None Include="Resources\legs_3.gif" />
+    <None Include="Resources\legs_2.gif" />
+    <None Include="Resources\legs_1.gif" />
+    <None Include="Resources\helmet_16.gif" />
+    <None Include="Resources\helmet_15.gif" />
+    <None Include="Resources\helmet_14.gif" />
+    <None Include="Resources\helmet_13.gif" />
+    <None Include="Resources\helmet_12.gif" />
+    <None Include="Resources\helmet_11.gif" />
+    <None Include="Resources\helmet_10.gif" />
+    <None Include="Resources\helmet_9.gif" />
+    <None Include="Resources\helmet_8.gif" />
+    <None Include="Resources\helmet_7.gif" />
+    <None Include="Resources\helmet_6.gif" />
+    <None Include="Resources\helmet_5.gif" />
+    <None Include="Resources\helmet_4.gif" />
+    <None Include="Resources\helmet_3.gif" />
+    <None Include="Resources\helmet_2.gif" />
+    <None Include="Resources\helmet_1.gif" />
+    <None Include="Resources\lightening.png" />
+    <None Include="Resources\poison.png" />
+    <None Include="Resources\trigger_door_not.png" />
+    <None Include="Resources\trigger_door.png" />
+    <None Include="Resources\fire2.png" />
+    <None Include="Resources\fire1.png" />
+    <None Include="Resources\pillar.png" />
+    <None Include="Resources\legs_1.png" />
+    <None Include="Resources\helmet_1.png" />
+    <None Include="Resources\ghost2.png" />
+    <None Include="Resources\ghost1.png" />
+    <None Include="Resources\ghost0.png" />
+    <None Include="Resources\snake2.png" />
+    <None Include="Resources\snake1.png" />
+    <None Include="Resources\snake0.png" />
+    <None Include="Resources\wall.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\weapon.png" />
+    <None Include="Resources\shield.png" />
+    <None Include="Resources\legs.png" />
+    <None Include="Resources\helmet.png" />
+    <None Include="Resources\box.png" />
+    <None Include="bin\Debug\HP_Postion_g.png" />
+    <None Include="bin\Debug\HP_Potion_m.png" />
+    <None Include="bin\Debug\HP_Potion_s.png" />
+    <None Include="bin\Debug\shield_1.png" />
+    <None Include="bin\Debug\shield_2.png" />
+    <None Include="bin\Debug\attack1.wav" />
+    <None Include="bin\Debug\attack2.wav" />
+    <None Include="bin\Debug\attack3.wav" />
+    <None Include="bin\Debug\level_up.wav" />
+    <None Include="bin\Debug\potion.wav" />
+    <None Include="bin\Debug\potion2.wav" />
+    <None Include="Resources\armor.png" />
+    <None Include="Resources\chest_closed.png" />
+    <None Include="Resources\chest_open.png" />
+    <None Include="Resources\armor_1.png" />
+    <None Include="Resources\DoorOpenHorizontal.png" />
+    <None Include="Resources\DoorOpenVertical.png" />
+    <None Include="Resources\doorClosed.png" />
+    <None Include="Resources\doorClosedHorizontal.png" />
+    <None Include="Resources\doorClosedVertical.png" />
+    <None Include="Resources\doorOpen.png" />
+    <None Include="bin\Debug\spooky_dungeon.wav" />
+    <Content Include="Properties\fire2.png" />
+    <None Include="Resources\chest_trigger.png" />
+    <None Include="Resources\doom.png" />
+    <None Include="Resources\armor_1.gif" />
+    <None Include="Resources\armor_2.gif" />
+    <None Include="Resources\armor_3.gif" />
+    <None Include="Resources\armor_4.gif" />
+    <None Include="Resources\armor_5.gif" />
+    <None Include="Resources\armor_6.gif" />
+    <None Include="Resources\armor_7.gif" />
+    <None Include="Resources\armor_8.gif" />
+    <None Include="Resources\armor_9.gif" />
+    <None Include="Resources\armor_10.gif" />
+    <None Include="Resources\armor_11.gif" />
+    <None Include="Resources\armor_12.gif" />
+    <None Include="Resources\armor_13.gif" />
+    <None Include="Resources\armor_14.gif" />
+    <None Include="Resources\armor_15.gif" />
+    <None Include="Resources\armor_16.gif" />
+    <None Include="Resources\empty.png" />
+    <None Include="Resources\EnergyBarrier1.png" />
+    <None Include="Resources\EnergyBarrier2.png" />
+    <None Include="Resources\EnergyBarrier3.png" />
+    <None Include="Resources\EnergyBarrier4.png" />
+    <None Include="Resources\EnergyBarrier5.png" />
+    <None Include="Resources\EnergyBarrier6.png" />
+    <None Include="Resources\EnergyBarrier7.png" />
+    <None Include="Resources\EnergyBarrier8.png" />
+    <None Include="Resources\EnergyBarrier9.png" />
+    <None Include="Resources\EnergyBarrier10.png" />
+    <None Include="Resources\EnergyBarrier11.png" />
+    <None Include="Resources\EnergyBarrier12.png" />
+    <None Include="Resources\EnergyBarrier13.png" />
+    <None Include="Resources\EnergyBarrier14.png" />
+    <None Include="Resources\EnergyBarrier15.png" />
+    <None Include="Resources\EnergyBarrier16.png" />
+    <None Include="Resources\EnergyBarrier17.png" />
+    <None Include="Resources\EnergyBarrier18.png" />
+    <None Include="Resources\EnergyBarrier19.png" />
+    <None Include="Resources\EnergyBarrier20.png" />
+    <None Include="Resources\EnergyBarrier21.png" />
+    <None Include="Resources\EnergyBarrier22.png" />
+    <None Include="Resources\EnergyBarrier23.png" />
+    <None Include="Resources\EnergyBarrier24.png" />
+    <None Include="Resources\EnergyBarrier25.png" />
+    <None Include="Resources\EnergyBarrier26.png" />
+    <None Include="Resources\EnergyBarrier27.png" />
+    <None Include="Resources\EnergyBarrier28.png" />
+    <None Include="Resources\EnergyBarrier29.png" />
+    <None Include="Resources\EnergyBarrier30.png" />
+    <None Include="Resources\EnergyBarrier31.png" />
+    <None Include="Resources\EnergyBarrier32.png" />
+    <None Include="Resources\EB3.png" />
+    <None Include="Resources\EB1.png" />
+    <None Include="Resources\EB2.png" />
+    <None Include="Resources\CrusingfireIcon3.png" />
+    <None Include="Resources\CrusingfireIcon1.png" />
+    <None Include="Resources\CrusingfireIcon2.png" />
+    <None Include="Resources\cursed.png" />
+    <None Include="Resources\armbind.png" />
+    <None Include="Resources\CrusingFire31.png" />
+    <None Include="Resources\CrusingFire1.png" />
+    <None Include="Resources\CrusingFire2.png" />
+    <None Include="Resources\CrusingFire3.png" />
+    <None Include="Resources\CrusingFire4.png" />
+    <None Include="Resources\CrusingFire5.png" />
+    <None Include="Resources\CrusingFire6.png" />
+    <None Include="Resources\CrusingFire7.png" />
+    <None Include="Resources\CrusingFire8.png" />
+    <None Include="Resources\CrusingFire9.png" />
+    <None Include="Resources\CrusingFire10.png" />
+    <None Include="Resources\CrusingFire11.png" />
+    <None Include="Resources\CrusingFire12.png" />
+    <None Include="Resources\CrusingFire13.png" />
+    <None Include="Resources\CrusingFire14.png" />
+    <None Include="Resources\CrusingFire15.png" />
+    <None Include="Resources\CrusingFire16.png" />
+    <None Include="Resources\CrusingFire17.png" />
+    <None Include="Resources\CrusingFire18.png" />
+    <None Include="Resources\CrusingFire19.png" />
+    <None Include="Resources\CrusingFire20.png" />
+    <None Include="Resources\CrusingFire21.png" />
+    <None Include="Resources\CrusingFire22.png" />
+    <None Include="Resources\CrusingFire23.png" />
+    <None Include="Resources\CrusingFire24.png" />
+    <None Include="Resources\CrusingFire25.png" />
+    <None Include="Resources\CrusingFire26.png" />
+    <None Include="Resources\CrusingFire27.png" />
+    <None Include="Resources\CrusingFire28.png" />
+    <None Include="Resources\CrusingFire29.png" />
+    <None Include="Resources\CrusingFire30.png" />
+    <None Include="Resources\CaveFloor.jpg" />
+    <None Include="Resources\CaveWall.png" />
+    <None Include="Resources\CaveFloor.bmp" />
+    <None Include="Resources\Bush.gif" />
+    <None Include="Resources\boss1.png" />
+    <None Include="Resources\boss2.png" />
+    <None Include="Resources\boss3.png" />
+    <None Include="Resources\boss4.png" />
+    <None Include="Resources\boss5.png" />
+    <None Include="Resources\boss6.png" />
+    <None Include="Resources\boss7.png" />
+    <None Include="Resources\boss8.png" />
+    <None Include="Resources\boss9.png" />
+    <None Include="Resources\boss10.png" />
+    <Content Include="Resources\fire.png" />
+    <None Include="Resources\stairUp.png" />
+    <None Include="Resources\stairDown.png" />
+    <None Include="Resources\skeleton2.png" />
+    <None Include="Resources\skeleton1.png" />
+    <None Include="Resources\skeleton0.png" />
+    <None Include="Resources\bat0.png" />
+    <None Include="Resources\bat1.png" />
+    <None Include="Resources\bat2.png" />
+    <None Include="bin\Debug\chest_closed.png" />
+    <Content Include="Resources\c1.png" />
+    <None Include="Resources\floor.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

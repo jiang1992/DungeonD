@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DungeonDrive.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FullScreen" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Width" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">800</Value>
+    </Setting>
+    <Setting Name="Height" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">600</Value>
+    </Setting>
+    <Setting Name="CloseKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Escape</Value>
+    </Setting>
+    <Setting Name="UpKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">W</Value>
+    </Setting>
+    <Setting Name="LeftKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="DownKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">S</Value>
+    </Setting>
+    <Setting Name="RightKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">D</Value>
+    </Setting>
+    <Setting Name="SelectKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Enter</Value>
+    </Setting>
+    <Setting Name="InventoryKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Space</Value>
+    </Setting>
+    <Setting Name="DeleteAttackKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">T</Value>
+    </Setting>
+    <Setting Name="SkillTreeKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">F</Value>
+    </Setting>
+    <Setting Name="SwitchSkillKey" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Tab</Value>
+    </Setting>
+    <Setting Name="ControllerEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SoundEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
