@@ -116,3 +116,6 @@ D:\DD\DungeonDrive\DungeonDrive\DungeonDrive\bin\Debug\Microsoft.Xna.Framework.G
 D:\DD\DungeonDrive\DungeonDrive\DungeonDrive\bin\Debug\Microsoft.Xna.Framework.xml
 D:\DD\DungeonDrive\DungeonDrive\DungeonDrive\bin\Debug\Microsoft.Xna.Framework.Game.xml
 D:\DD\DungeonDrive\DungeonDrive\DungeonDrive\bin\Debug\Microsoft.Xna.Framework.Graphics.xml
+D:\DD - Copy\DungeonDrive\DungeonD\DungeonDrive\DungeonDrive\bin\Debug\DungeonDrive.exe.config
+D:\DD - Copy\DungeonDrive\DungeonD\DungeonDrive\DungeonDrive\obj\Debug\DungeonDrive.exe
+D:\DD - Copy\DungeonDrive\DungeonD\DungeonDrive\DungeonDrive\obj\Debug\DungeonDrive.pdb
